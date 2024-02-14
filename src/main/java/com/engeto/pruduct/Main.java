@@ -1,19 +1,23 @@
 package com.engeto.pruduct;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Computer computer1 = new Computer("Dell", 1980, BigDecimal.valueOf(20000));
+        Computer computer2 = new Computer("Dell", 2010, BigDecimal.valueOf(21000));
+        Computer computer3 = new Computer("Mac", 2009, BigDecimal.valueOf(15000));
+        List<Computer> otherList = new ArrayList<>();
+        ComputerManager manager = new ComputerManager(otherList);
+        manager.addComputer(computer1);
+        manager.addComputer(computer2);
+        manager.addComputer(computer3);
+        System.out.println(manager.getComputers().size());
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
     }
 }
