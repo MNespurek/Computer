@@ -2,6 +2,8 @@ package com.engeto.pruduct;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -19,9 +21,15 @@ public class Main {
         System.out.println(manager.getComputers().size());
         for (Computer computer : manager.getComputers()) {
             System.out.println("Název PC: " +computer.getDescription()+ " rok: " +computer.getYearOfProduction()+ " cena: " +computer.getPrice()+ " Kč");
-
         }
+        Collections.sort(manager.getComputers(), Comparator.comparing(Computer::getPrice));
+        manager.getComputers().forEach(System.out::println);
 
+        List<Computer> priceSortedList = new ArrayList<>(manager.getComputers());
+        Collections.sort(priceSortedList, Comparator.comparing((Computer::getPrice)));
+        priceSortedList.forEach(System.out::println);
 
     }
+
+
 }
