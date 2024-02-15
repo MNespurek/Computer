@@ -17,6 +17,10 @@ public class Main {
         manager.addComputer(computer2);
         manager.addComputer(computer3);
         System.out.println(manager.getComputers().size());
+        for (Computer computer : manager.getComputers()) {
+            System.out.println("Název PC: " +computer.getDescription()+ " rok: " +computer.getYearOfProduction()+ " cena: " +computer.getPrice()+ " Kč");
+
+        }
 
 
     }
