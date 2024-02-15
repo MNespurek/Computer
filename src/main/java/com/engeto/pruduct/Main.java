@@ -22,11 +22,16 @@ public class Main {
         for (Computer computer : manager.getComputers()) {
             System.out.println("Název PC: " +computer.getDescription()+ " rok: " +computer.getYearOfProduction()+ " cena: " +computer.getPrice()+ " Kč");
         }
-        Collections.sort(manager.getComputers(), Comparator.comparing(Computer::getPrice));
+        System.out.println("Řada computer seřazená dle ceny bez nového listu: \n");
+        manager.getComputers().sort(Comparator.comparing(Computer::getPrice));
         manager.getComputers().forEach(System.out::println);
 
         List<Computer> priceSortedList = new ArrayList<>(manager.getComputers());
-        Collections.sort(priceSortedList, Comparator.comparing((Computer::getPrice)));
+        System.out.println("Řada computer dle ceny včetně nového listu: \n");
+        priceSortedList.sort(Comparator.comparing((Computer::getPrice)));
+        priceSortedList.forEach(System.out::println);
+        System.out.println("Řada computer reverzně dle datu výroby včetně nového listu: \n");
+        priceSortedList.sort(Comparator.comparing(Computer::getYearOfProduction).reversed());
         priceSortedList.forEach(System.out::println);
 
     }
