@@ -15,6 +15,7 @@ public class Main {
         Computer computer3 = new Computer("Mac", 2009, BigDecimal.valueOf(15000));
         Computer computer4 = new Computer("Mac", 2009, BigDecimal.valueOf(18000));
         Computer computer5 = new Computer("Mac", 2009, BigDecimal.valueOf(17000));
+		System.out.println("master2.0");
 
 
         List<Computer> otherList = new ArrayList<>();
